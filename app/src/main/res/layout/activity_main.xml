@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="3dp"
+    android:id="@+id/tap"
+    android:background=" #2471a3 ">
+
+    <TextView
+        android:id="@+id/tvcounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="160dp"
+        android:text="100"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="@drawable/shape"
+        android:textColor="#FFFFFF"
+        android:textSize="55sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnduas"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Dhikr"
+            android:textColor="#FFF"
+            android:background=" #154360 "
+            />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/btnedit"
+            android:layout_marginLeft="1dp"
+            android:text="Edit"
+            android:textColor="#FFF"
+            android:background=" #154360 "
+            />
+
+        <ImageButton
+            android:id="@+id/btnreset"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="1dp"
+            android:src="@drawable/ic_replay_black_24dp"
+            android:background=" #154360 " />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="40dp"
+        android:text="Prayer timmings"
+        android:background=" #154360 "
+        android:textColor="#FFF"
+        android:id="@+id/btnprayer"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+        android:text="textview"
+        android:gravity="center"
+        android:background="@drawable/box"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor=" #000 "/>
+
+</RelativeLayout>

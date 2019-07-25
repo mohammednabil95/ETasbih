@@ -1,0 +1,520 @@
+<resources>
+    <string name="app_name">E Tasbih</string>
+
+
+    <string-array name="cities">
+        <item>Mariehamn</item>
+        <item>Tirana</item>
+        <item>Andorra la Vella</item>
+        <item>Vienna</item>
+        <item>Minsk</item>
+        <item>Brussels</item>
+        <item>Sarajevo</item>
+        <item>Sofia</item>
+        <item>Zagreb</item>
+        <item>Prague</item>
+        <item>Copenhagen</item>
+        <item>Tallinn</item>
+        <item>Tórshavn</item>
+        <item>Helsinki</item>
+        <item>Paris</item>
+        <item>Gibraltar</item>
+        <item>Athens</item>
+        <item>Saint Peter Port</item>
+        <item>Budapest</item>
+        <item>Reykjavík</item>
+        <item>Dublin</item>
+        <item>Douglas</item>
+        <item>Rome</item>
+        <item>Saint Helier</item>
+        <item>Pristina</item>
+        <item>Riga</item>
+        <item>Vaduz</item>
+        <item>Vilnius</item>
+        <item>Luxembourg</item>
+        <item>Valletta</item>
+        <item>Chisinau</item>
+        <item>Monaco</item>
+        <item>Podgorica</item>
+        <item>Amsterdam</item>
+        <item>Skopje</item>
+        <item>Oslo</item>
+        <item>Warsaw</item>
+        <item>Lisbon</item>
+        <item>Porto</item>
+        <item>Bucharest</item>
+        <item>Moscow</item>
+        <item>San Marino</item>
+        <item>Belgrade</item>
+        <item>Bratislava</item>
+        <item>Ljubljana</item>
+        <item>Madrid</item>
+        <item>Barcelona</item>
+        <item>Valencia</item>
+        <item>Sevilla</item>
+        <item>Bilbao</item>
+        <item>Longyearbyen</item>
+        <item>Stockholm</item>
+        <item>Bern</item>
+        <item>Kiev</item>
+        <item>London</item>
+        <item>Birmingham</item>
+        <item>Glasgow</item>
+        <item>Liverpool</item>
+        <item>Leeds</item>
+        <item>Sheffield</item>
+        <item>Edinburgh</item>
+        <item>Cardiff</item>
+        <item>Belfast</item>
+        <item>Aberdeen</item>
+        <item>Swansea</item>
+        <item>Derry</item>
+        <item>Bradford</item>
+        <item>Bristol</item>
+        <item>Canterbury</item>
+        <item>Chelmsford</item>
+        <item>Durham</item>
+        <item>Leicester</item>
+        <item>Manchester</item>
+        <item>Norwich</item>
+        <item>Nottingham</item>
+        <item>Southampton</item>
+        <item>Winchester</item>
+        <item>The Valley</item>
+        <item>Saint John’s</item>
+        <item>Buenos Aires</item>
+        <item>Oranjestad</item>
+        <item>Nassau</item>
+        <item>Bridgetown</item>
+        <item>Belmopan</item>
+        <item>Sucre</item>
+        <item>Brasília</item>
+        <item>Road Town</item>
+        <item>Ottawa</item>
+        <item>Toronto</item>
+        <item>Montréal</item>
+        <item>George Town</item>
+        <item>Santiago</item>
+        <item>Bogota</item>
+        <item>San Jose</item>
+        <item>Havana</item>
+        <item>Willemstad</item>
+        <item>Roseau</item>
+        <item>Santo Domingo</item>
+        <item>Quito</item>
+        <item>San Salvador</item>
+        <item>Stanley</item>
+        <item>Cayenne</item>
+        <item>Nuuk</item>
+        <item>Saint George</item>
+        <item>Basse-Terre</item>
+        <item>Guatemala City</item>
+        <item>Georgetown</item>
+        <item>Port-au-Prince</item>
+        <item>Tegucigalpa</item>
+        <item>Kingston</item>
+        <item>Fort-de-France</item>
+        <item>Mexico City</item>
+        <item>Brades</item>
+        <item>Managua</item>
+        <item>Panama City</item>
+        <item>Asuncion</item>
+        <item>Lima</item>
+        <item>San Juan</item>
+        <item>Gustavia</item>
+        <item>Basseterre</item>
+        <item>Castries</item>
+        <item>Marigot</item>
+        <item>Saint-Pierre</item>
+        <item>Kingstown</item>
+        <item>Philipsburg</item>
+        <item>King Edward Point</item>
+        <item>Paramaribo</item>
+        <item>Port-of-Spain</item>
+        <item>Cockburn Town</item>
+        <item>Washington</item>
+        <item>Montevideo</item>
+        <item>Caracas</item>
+        <item>Charlotte Amalie</item>
+        <item>New York City</item>
+        <item>Los Angeles</item>
+        <item>Chicago</item>
+        <item>Houston</item>
+        <item>Phoenix</item>
+        <item>Philadelphia</item>
+        <item>San Antonio</item>
+        <item>San Diego</item>
+        <item>Dallas</item>
+        <item>San Jose</item>
+        <item>Jacksonville</item>
+        <item>Columbus</item>
+        <item>Indianapolis</item>
+        <item>Charlotte</item>
+        <item>Detroit</item>
+        <item>Baltimore</item>
+        <item>Boston</item>
+        <item>Denver</item>
+        <item>Las Vegas</item>
+        <item>Oklahoma City</item>
+        <item>Albuquerque</item>
+        <item>Kansas City</item>
+        <item>West Island</item>
+        <item>Canberra</item>
+        <item>Melbourne</item>
+        <item>Perth</item>
+        <item>Adelaide</item>
+        <item>Brisbane</item>
+        <item>Gold Coast</item>
+        <item>Hobart</item>
+        <item>Sydney</item>
+        <item>Darwin</item>
+        <item>Mandurah</item>
+        <item>Wellington</item>
+        <item>Auckland</item>
+        <item>Christchurch</item>
+        <item>Hamilton</item>
+        <item>Dunedin</item>
+        <item>Nelson</item>
+        <item>Napier</item>
+        <item>Oamaru</item>
+        <item>Pago Pago</item>
+        <item>Avarua</item>
+        <item>Suva</item>
+        <item>Papeete</item>
+        <item>Tarawa</item>
+        <item>Majuro</item>
+        <item>Yaren</item>
+        <item>Noumea</item>
+        <item>Alofi</item>
+        <item>Saipan</item>
+        <item>Port Moresby</item>
+        <item>Adamstown</item>
+        <item>Apia</item>
+        <item>Honiara</item>
+        <item>Nukualofa</item>
+        <item>Funafuti</item>
+        <item>Port-Vila</item>
+        <item>Mata-Utu</item>
+        <item>Kabul</item>
+        <item>Herat</item>
+        <item>Ghazni</item>
+        <item>Yerevan</item>
+        <item>Baku</item>
+        <item>Manama</item>
+        <item>Dhaka</item>
+        <item>Chittagong</item>
+        <item>Khulna</item>
+        <item>Rajshahi</item>
+        <item>Comilla</item>
+        <item>Rangpur</item>
+        <item>Sylhet</item>
+        <item>Thimphu</item>
+        <item>Bandar Seri Begawan</item>
+        <item>Nay Pyi Taw</item>
+        <item>Phnom Penh</item>
+        <item>Beijing</item>
+        <item>Shanghai</item>
+        <item>Tianjin</item>
+        <item>Shenzhen</item>
+        <item>Guangzhou</item>
+        <item>Qingdao</item>
+        <item>Nicosia</item>
+        <item>Dili</item>
+        <item>Tbilisi</item>
+        <item>Hong Kong</item>
+        <item>New Delhi</item>
+        <item>Mumbai</item>
+        <item>Bangalore</item>
+        <item>Chennai</item>
+        <item>Hyderabad</item>
+        <item>Ahmedabad</item>
+        <item>Kolkata</item>
+        <item>Surat</item>
+        <item>Pune</item>
+        <item>Jaipur</item>
+        <item>Lucknow</item>
+        <item>Kanpur</item>
+        <item>Patna</item>
+        <item>Indore</item>
+        <item>Bhopal</item>
+        <item>Visakhapatnam</item>
+        <item>Ludhiana</item>
+        <item>Coimbatore</item>
+        <item>Faridabad</item>
+        <item>Srinagar</item>
+        <item>Amritsar</item>
+        <item>Haora</item>
+        <item>Jodhpur</item>
+        <item>Chandigarh</item>
+        <item>Guwahati</item>
+        <item>Vijayawada</item>
+        <item>Mysore</item>
+        <item>Ranchi</item>
+        <item>Thiruvananthapuram</item>
+        <item>Jakarta</item>
+        <item>Tehran</item>
+        <item>Isfahan</item>
+        <item>Shiraz</item>
+        <item>Tabriz</item>
+        <item>Qom</item>
+        <item>Bandar Abbas</item>
+        <item>Baghdad</item>
+        <item>Al Basrah</item>
+        <item>As Sulaymaniyah</item>
+        <item>Erbil</item>
+        <item>Mosul</item>
+        <item>Kirkuk</item>
+        <item>An Najaf</item>
+        <item>Karbala</item>
+        <item>Kufa</item>
+        <item>Jerusalem</item>
+        <item>Tokyo</item>
+        <item>Amman</item>
+        <item>Zarqa</item>
+        <item>Irbid</item>
+        <item>Nursultan</item>
+        <item>Kuwait City</item>
+        <item>Bishkek</item>
+        <item>Vientiane</item>
+        <item>Beirut</item>
+        <item>Tripoli</item>
+        <item>Concelho de Macau</item>
+        <item>Kuala Lumpur</item>
+        <item>Male</item>
+        <item>Ulaanbaatar</item>
+        <item>Kathmandu</item>
+        <item>Pyongyang</item>
+        <item>Muscat</item>
+        <item>Islamabad</item>
+        <item>Karachi</item>
+        <item>Lahore</item>
+        <item>Faisalabad</item>
+        <item>Gujranwala</item>
+        <item>Rawalpindi</item>
+        <item>Peshawar</item>
+        <item>Quetta</item>
+        <item>Muzaffarabad</item>
+        <item>Mardan</item>
+        <item>Multan</item>
+        <item>Bahawalpur</item>
+        <item>Sargodha</item>
+        <item>Sialkot</item>
+        <item>Sukkur</item>
+        <item>Rahim Yar Khan</item>
+        <item>Gujrat</item>
+        <item>Abbotabad</item>
+        <item>Jhelum</item>
+        <item>Attock</item>
+        <item>Gwadar</item>
+        <item>Ramallah</item>
+        <item>Gaza</item>
+        <item>Manila</item>
+        <item>Doha</item>
+        <item>Ar Rayyan</item>
+        <item>Riyadh</item>
+        <item>Jeddah</item>
+        <item>Makkah</item>
+        <item>Madinah</item>
+        <item>Dammam</item>
+        <item>Taif</item>
+        <item>Tabuk</item>
+        <item>Buraydah</item>
+        <item>Qassim</item>
+        <item>Khamis Mushait</item>
+        <item>Hail</item>
+        <item>Al Kharj</item>
+        <item>Hufuf</item>
+        <item>Najran</item>
+        <item>Abha</item>
+        <item>Arar</item>
+        <item>Jizan</item>
+        <item>Jubail</item>
+        <item>Al Khobar</item>
+        <item>Dhahran</item>
+        <item>Singapore</item>
+        <item>Seoul</item>
+        <item>Colombo</item>
+        <item>Kandy</item>
+        <item>Galle</item>
+        <item>Dambulla</item>
+        <item>Damascus</item>
+        <item>Aleppo</item>
+        <item>Homs</item>
+        <item>Idlib</item>
+        <item>Taipei</item>
+        <item>Dushanbe</item>
+        <item>Bangkok</item>
+        <item>Ankara</item>
+        <item>Istanbul</item>
+        <item>Ashgabat</item>
+        <item>Abu Dhabi</item>
+        <item>Dubai</item>
+        <item>Sharjah</item>
+        <item>Al Ain</item>
+        <item>Ajman</item>
+        <item>Ras al-Khaimah</item>
+        <item>Al Fujayrah</item>
+        <item>Tashkent</item>
+        <item>Hanoi</item>
+        <item>Sanaa</item>
+        <item>Al Hudaydah</item>
+        <item>Taizz</item>
+        <item>Aden</item>
+        <item>Bisha</item>
+        <item>Baha</item>
+        <item>Diriyah</item>
+        <item>Gurayat</item>
+        <item>Hafr Al Batin</item>
+        <item>Al Jawf</item>
+        <item>Qatif</item>
+        <item>Rabigh</item>
+        <item>Wadi Al Dawasir</item>
+        <item>Nagpur</item>
+        <item>Indore</item>
+        <item>Vadodara</item>
+        <item>Ghaziabad</item>
+        <item>Agra</item>
+        <item>Nashik</item>
+        <item>Meerut</item>
+        <item>Rajkot</item>
+        <item>Varanasi</item>
+        <item>Dhanbad</item>
+        <item>Aurangabad</item>
+        <item>Allahabad</item>
+        <item>Gwalior</item>
+        <item>Jabalpur</item>
+        <item>Bareilly</item>
+        <item>Mysore</item>
+        <item>Gurgaon</item>
+        <item>Aligarh</item>
+        <item>Jalandhar</item>
+        <item>Bhubaneswar</item>
+        <item>Warangal</item>
+        <item>Guntur</item>
+        <item>Saharanpur</item>
+        <item>Gorakhpur</item>
+        <item>Noida</item>
+        <item>Jamshedpur</item>
+        <item>Cuttack</item>
+        <item>Kochi</item>
+        <item>Dehradun</item>
+        <item>Kolhapur</item>
+        <item>Ajmer</item>
+        <item>Gulbarga</item>
+        <item>Mangalore</item>
+        <item>Kurnool</item>
+        <item>Patiala</item>
+        <item>Muzaffarnagar</item>
+        <item>Tirupati</item>
+        <item>Rohtak</item>
+        <item>Rampur</item>
+        <item>Kakinada</item>
+        <item>Nizamabad</item>
+        <item>Khammam</item>
+        <item>Panipat</item>
+        <item>Karimnagar</item>
+        <item>Pondicherry</item>
+        <item>Mirzapur</item>
+        <item>Haridwar</item>
+        <item>Gandhinagar</item>
+        <item>Chittoor</item>
+        <item>Ambala</item>
+        <item>Sirsa</item>
+        <item>Shimla</item>
+        <item>Udupi</item>
+        <item>Guntakal</item>
+        <item>Kishanganj</item>
+        <item>Algiers</item>
+        <item>Luanda</item>
+        <item>Porto-Novo</item>
+        <item>Gaborone</item>
+        <item>Ouagadougou</item>
+        <item>Bujumbura</item>
+        <item>Yaounde</item>
+        <item>Praia</item>
+        <item>Bangui</item>
+        <item>NDjamena</item>
+        <item>Moroni</item>
+        <item>Kinshasa</item>
+        <item>Djibouti</item>
+        <item>Cairo</item>
+        <item>Alexandria</item>
+        <item>Giza</item>
+        <item>Suez</item>
+        <item>Al Mansurah</item>
+        <item>Malabo</item>
+        <item>Asmara</item>
+        <item>Addis Ababa</item>
+        <item>Libreville</item>
+        <item>Banjul</item>
+        <item>Accra</item>
+        <item>Conakry</item>
+        <item>Bissau</item>
+        <item>Yamoussoukro</item>
+        <item>Nairobi</item>
+        <item>Maseru</item>
+        <item>Monrovia</item>
+        <item>Tripoli</item>
+        <item>Benghazi</item>
+        <item>Antananarivo</item>
+        <item>Lilongwe</item>
+        <item>Bamako</item>
+        <item>Nouakchott</item>
+        <item>Port Louis</item>
+        <item>Mamoudzou</item>
+        <item>Rabat</item>
+        <item>Maputo</item>
+        <item>Windhoek</item>
+        <item>Niamey</item>
+        <item>Abuja</item>
+        <item>Brazzaville</item>
+        <item>Saint-Denis</item>
+        <item>Kigali</item>
+        <item>Jamestown</item>
+        <item>Sao Tome</item>
+        <item>Dakar</item>
+        <item>Victoria</item>
+        <item>Freetown</item>
+        <item>Mogadishu</item>
+        <item>Pretoria</item>
+        <item>Johannesburg</item>
+        <item>Cape Town</item>
+        <item>Pietermaritzburg</item>
+        <item>Benoni</item>
+        <item>Durban</item>
+        <item>East London</item>
+        <item>Bloemfontein</item>
+        <item>Newcastle</item>
+        <item>Port Elizabeth</item>
+        <item>Paarl</item>
+        <item>Kimberley</item>
+        <item>Juba</item>
+        <item>Khartoum</item>
+        <item>Mbabane</item>
+        <item>Dodoma</item>
+        <item>Lome</item>
+        <item>Tunis</item>
+        <item>Kampala</item>
+        <item>El Aaiun</item>
+        <item>Lusaka</item>
+        <item>Harare</item>
+        <item>Bulawayo</item>
+        <item>Marseille</item>
+        <item>Lyon</item>
+        <item>Milano</item>
+        <item>Napoli</item>
+        <item>Rotterdam</item>
+        <item>Porto</item>
+        <item>Amadora</item>
+        <item>Berlin</item>
+        <item>Zurich</item>
+        <item>Hamburg</item>
+        <item>Munich</item>
+        <item>Calicut</item>
+        <item>Adilabad</item>
+    </string-array>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="tab_text_1">Today</string>
+    <string name="tab_text_2">1 Week</string>
+    <string name="tab_text_3">1 Month</string>
+</resources>
