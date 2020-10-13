@@ -41,6 +41,12 @@
 
     **********************************************************
 
-
+    <dimen name="sp_12">24sp</dimen>
+    <dimen name="dp_450">900dp</dimen>
+    <dimen name="dp_15">30dp</dimen>
+    <dimen name="sp_17">34sp</dimen>
+    <dimen name="dp_2">4dp</dimen>
+    <dimen name="dp_12">24dp</dimen>
+    <dimen name="dp_8">16dp</dimen>
 
 </resources>

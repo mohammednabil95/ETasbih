@@ -5,13 +5,13 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatDialogFragment;
+import androidx.appcompat.app.AppCompatDialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
 public class ExampleDialog extends AppCompatDialogFragment {
-    private EditText editnum;
+    private EditText editNum;
     private ExampleDialogListener listener;
 
     @Override
@@ -30,19 +30,19 @@ public class ExampleDialog extends AppCompatDialogFragment {
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        String editNumber = editNum.getText().toString();
+                        if (editNumber.equals("")) {
 
-                        String editnumber = editnum.getText().toString();
-                        if (editnumber.equals("")){
-
-                        }else {
-                        MainActivity mainActivity= (MainActivity) getActivity();
-                        int value=Integer.valueOf(editnumber);
-                        mainActivity.counter=value;
-                        listener.applynum(editnumber);}
-
+                        } else {
+                            MainActivity mainActivity = (MainActivity) getActivity();
+                            int value = Integer.valueOf(editNumber);
+                            mainActivity.counter = value;
+                            listener.applyNum(editNumber);
+                        }
                     }
                 });
-        editnum = view.findViewById(R.id.editnum);
+
+        editNum = view.findViewById(R.id.editNum);
         return builder.create();
     }
 
@@ -57,6 +57,6 @@ public class ExampleDialog extends AppCompatDialogFragment {
     }
 
     public interface ExampleDialogListener {
-        void applynum(String editnumber);
+        void applyNum(String editNumber);
     }
 }

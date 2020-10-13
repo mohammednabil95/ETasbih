@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,7 +10,7 @@
     android:background=" #2471a3 ">
 
     <TextView
-        android:id="@+id/tvcounter"
+        android:id="@+id/tvCounter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -28,34 +28,32 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnduas"
+            android:id="@+id/btnDuas"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="Dhikr"
             android:textColor="#FFF"
-            android:background=" #154360 "
-            />
+            android:background="@drawable/outline_button"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/btnedit"
+            android:id="@+id/btnEdit"
             android:layout_marginLeft="1dp"
             android:text="Edit"
             android:textColor="#FFF"
-            android:background=" #154360 "
-            />
+            android:background="@drawable/outline_button"/>
 
         <ImageButton
-            android:id="@+id/btnreset"
+            android:id="@+id/btnReset"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:src="@drawable/ic_replay_black_24dp"
-            android:background=" #154360 " />
+            android:background="@drawable/outline_button" />
 
     </LinearLayout>
 
@@ -64,9 +62,9 @@
         android:layout_height="30dp"
         android:layout_marginTop="40dp"
         android:text="Prayer timmings"
-        android:background=" #154360 "
+        android:background="@drawable/outline_button"
         android:textColor="#FFF"
-        android:id="@+id/btnprayer"/>
+        android:id="@+id/btnPrayer"/>
 
     <TextView
         android:id="@+id/textView"
@@ -74,7 +72,6 @@
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="75dp"
-        android:text="textview"
         android:gravity="center"
         android:background="@drawable/box"
         android:textSize="25sp"

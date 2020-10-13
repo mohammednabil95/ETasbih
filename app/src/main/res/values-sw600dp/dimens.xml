@@ -41,6 +41,13 @@
 
     **********************************************************
 
+    <dimen name="sp_12">20.4sp</dimen>
+    <dimen name="dp_450">765dp</dimen>
+    <dimen name="dp_15">25.5dp</dimen>
+    <dimen name="sp_17">28.9sp</dimen>
+    <dimen name="dp_2">3.4dp</dimen>
+    <dimen name="dp_12">20.4dp</dimen>
+    <dimen name="dp_8">13.6dp</dimen>
 
 
 </resources>

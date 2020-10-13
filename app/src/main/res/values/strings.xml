@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">E Tasbih</string>
-
-
     <string-array name="cities">
         <item>Mariehamn</item>
         <item>Tirana</item>
@@ -9,6 +7,7 @@
         <item>Vienna</item>
         <item>Minsk</item>
         <item>Brussels</item>
+        <item>Wuhan</item>
         <item>Sarajevo</item>
         <item>Sofia</item>
         <item>Zagreb</item>
@@ -513,8 +512,4 @@
         <item>Calicut</item>
         <item>Adilabad</item>
     </string-array>
-    <string name="title_activity_main2">Main2Activity</string>
-    <string name="tab_text_1">Today</string>
-    <string name="tab_text_2">1 Week</string>
-    <string name="tab_text_3">1 Month</string>
 </resources>
