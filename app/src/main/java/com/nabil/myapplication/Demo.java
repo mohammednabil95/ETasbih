@@ -1,7 +1,8 @@
 package com.nabil.myapplication;
 
 public class Demo {
-    private String textView1, textView2;
+    private final String textView1;
+    private final String textView2;
 
     public Demo(String textView1, String textView2) {
         this.textView1 = textView1;

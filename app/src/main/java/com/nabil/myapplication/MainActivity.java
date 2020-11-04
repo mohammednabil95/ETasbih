@@ -11,11 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -49,84 +46,58 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
         textView = findViewById(R.id.textView);
         dialog=new Dialog(this);
 
-        btnEdit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                textView.setFocusable(false);
-                openDialog();
-            }
+        btnEdit.setOnClickListener(v -> {
+            textView.setFocusable(false);
+            openDialog();
         });
 
-        textView.setText("textView");
+        textView.setText("");
         vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
         Intent intent = getIntent();
         String id = intent.getStringExtra("text_1");
         textView.setText(id);
         textView.setFocusable(false);
 
-        textView.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                textView.setFocusableInTouchMode(true);
-                return false;
+        textView.setOnTouchListener((v, event) -> {
+            textView.setFocusableInTouchMode(true);
+            return false;
+        });
+
+        tap.setOnClickListener(v -> {
+            textView.setFocusable(false);
+            SharedPreferences sharedPreferences=getSharedPreferences("SETTINGS", Context.MODE_PRIVATE);
+            boolean check=sharedPreferences.getBoolean("vib",true);
+            if (!check){
+                vibrator.cancel();
+            }else {
+                vibrator.vibrate(50);
+            }
+            if (counter != 0)
+                counter--;
+            tvCounter.setText(Integer.toString(counter));
+            if (counter == 0) {
+                vibrator.cancel();
+                mediaPlayer.start();
+                Toast.makeText(MainActivity.this, "Done", Toast.LENGTH_SHORT).show();
             }
         });
 
-        tap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                textView.setFocusable(false);
-                SharedPreferences sharedPreferences=getSharedPreferences("SETTINGS", Context.MODE_PRIVATE);
-                boolean check=sharedPreferences.getBoolean("vib",true);
-                if (check==false){
-                    vibrator.cancel();
-                    if (counter != 0)
-                        counter--;
-                    tvCounter.setText(Integer.toString(counter));
-                    if (counter == 0) {
-                        vibrator.cancel();
-                        mediaPlayer.start();
-                        Toast.makeText(MainActivity.this, "Done", Toast.LENGTH_SHORT).show();
-                    }
-                }else {
-                    vibrator.vibrate(50);
-                    if (counter != 0)
-                        counter--;
-                    tvCounter.setText(Integer.toString(counter));
-                    if (counter == 0) {
-                        vibrator.cancel();
-                        mediaPlayer.start();
-                        Toast.makeText(MainActivity.this, "Done", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            }
+        btnReset.setOnClickListener(v -> {
+            textView.setFocusable(false);
+            counter = 100;
+            tvCounter.setText(Integer.toString(counter));
         });
 
-        btnReset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                textView.setFocusable(false);
-                counter = 100;
-                tvCounter.setText(Integer.toString(counter));
-            }
+        btnDua.setOnClickListener(v -> {
+            finish();
+            startActivity(new Intent(MainActivity.this, SecondActivity.class));
+            Animatoo.animateSlideLeft(MainActivity.this);
         });
 
-        btnDua.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-                startActivity(new Intent(MainActivity.this, SecondActivity.class));
-                Animatoo.animateSlideLeft(MainActivity.this);
-            }
-        });
-
-        btnPrayer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-                startActivity(new Intent(MainActivity.this, PrayerActivity.class));
-                Animatoo.animateSlideLeft(MainActivity.this);
-            }
+        btnPrayer.setOnClickListener(v -> {
+            finish();
+            startActivity(new Intent(MainActivity.this, PrayerActivity.class));
+            Animatoo.animateSlideLeft(MainActivity.this);
         });
     }
 
@@ -148,12 +119,11 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.menuSettings:
-                OpenSettings();
-                return true;
-            default: return super.onOptionsItemSelected(item);
+        if (item.getItemId() == R.id.menuSettings) {
+            OpenSettings();
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 
     private void OpenSettings() {
@@ -172,24 +142,12 @@ public class MainActivity extends AppCompatActivity implements ExampleDialog.Exa
 
         switchMaterial.setChecked(sharedPreferences.getBoolean("vib",true));
 
-        switchMaterial.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked){
-                    editor.putBoolean("vib",true);
-                }else {
-                    editor.putBoolean("vib",false);
-                }
-                editor.apply();
-            }
+        switchMaterial.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            editor.putBoolean("vib", isChecked);
+            editor.apply();
         });
 
-        btnOK.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
+        btnOK.setOnClickListener(v -> dialog.dismiss());
 
         dialog.show();
     }

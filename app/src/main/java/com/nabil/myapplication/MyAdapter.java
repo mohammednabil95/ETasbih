@@ -15,8 +15,8 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ProductViewHolder>  {
 
-    private Context context;
-    private List<Demo> demos;
+    private final Context context;
+    private final List<Demo> demos;
 
     public MyAdapter(Context context, List<Demo> demos) {
         this.context = context;
@@ -36,17 +36,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ProductViewHolder>
         final Demo demo = demos.get(i);
         productViewHolder.textView1.setText(demo.getTextView1());
         productViewHolder.textView2.setText(demo.getTextView2());
-        productViewHolder.cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String tv1 = demo.getTextView1();
-                Intent intent = new Intent(context, MainActivity.class);
-                intent.putExtra("text_1", tv1);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(intent);
-                ((Activity)context).finish();
-                Animatoo.animateSlideRight(context);
-            }
+        productViewHolder.cardView.setOnClickListener(v -> {
+            String tv1 = demo.getTextView1();
+            Intent intent = new Intent(context, MainActivity.class);
+            intent.putExtra("text_1", tv1);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent);
+            ((Activity)context).finish();
+            Animatoo.animateSlideRight(context);
         });
     }
 
@@ -55,7 +52,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ProductViewHolder>
         return demos.size();
     }
 
-    public class ProductViewHolder extends RecyclerView.ViewHolder {
+    public static class ProductViewHolder extends RecyclerView.ViewHolder {
         TextView textView1, textView2;
         CardView cardView;
         public ProductViewHolder(@NonNull View itemView) {

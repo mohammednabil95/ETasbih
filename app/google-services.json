@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "465708838319",
+    "firebase_url": "https://e-tasbih.firebaseio.com",
+    "project_id": "e-tasbih",
+    "storage_bucket": "e-tasbih.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:465708838319:android:6d9d6f17df139207a5935a",
+        "android_client_info": {
+          "package_name": "com.nabil.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "465708838319-8eah1j4ab3lv34c718gmkgoccaok7n64.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzCzmrmshumPrcXWNIwbakygIGZP6t-4M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "465708838319-8eah1j4ab3lv34c718gmkgoccaok7n64.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

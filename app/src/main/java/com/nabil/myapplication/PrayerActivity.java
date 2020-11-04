@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.Address;
 import android.location.Geocoder;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import android.net.ConnectivityManager;
@@ -19,7 +21,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -76,36 +77,18 @@ public class PrayerActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        btnMethod.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openMethod();
-            }
+        btnMethod.setOnClickListener(v -> openMethod());
+
+        btnSearch.setOnClickListener(v -> SearchAPI());
+
+        search.setOnItemClickListener((parent, view, position, id) -> {
+            keyboard();
+            search.setCursorVisible(true);
+            String selectedData=parent.getItemAtPosition(position).toString();
+            ArrayAPI(selectedData);
         });
 
-        btnSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SearchAPI();
-            }
-        });
-
-        search.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                keyboard();
-                search.setCursorVisible(true);
-                String selectedData=parent.getItemAtPosition(position).toString();
-                ArrayAPI(selectedData);
-            }
-        });
-
-        linearLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                hideSoftKeyboard(PrayerActivity.this);
-            }
-        });
+        linearLayout.setOnClickListener(v -> hideSoftKeyboard(PrayerActivity.this));
     }
 
     private void hideSoftKeyboard(Activity activity) {
@@ -156,7 +139,7 @@ public class PrayerActivity extends AppCompatActivity {
             call.enqueue(new Callback<Prayer>() {
                 @RequiresApi(api = Build.VERSION_CODES.O)
                 @Override
-                public void onResponse(Call<Prayer> call, Response<Prayer> response) {
+                public void onResponse(@NonNull Call<Prayer> call, @NonNull Response<Prayer> response) {
                     Prayer prayer=response.body();
 
                     String fajrMain=prayer.getData().getTimings().getFajr();
@@ -302,7 +285,7 @@ public class PrayerActivity extends AppCompatActivity {
             call.enqueue(new Callback<Prayer>() {
                 @RequiresApi(api = Build.VERSION_CODES.O)
                 @Override
-                public void onResponse(Call<Prayer> call, Response<Prayer> response) {
+                public void onResponse(@NonNull Call<Prayer> call, @NonNull Response<Prayer> response) {
                     Prayer prayer=response.body();
 
                     String fajrMain=prayer.getData().getTimings().getFajr();
@@ -370,18 +353,17 @@ public class PrayerActivity extends AppCompatActivity {
                         List < Address > addressList = geocoder.getFromLocation(locationMainLat, locationMainLong, 1);
                         if (addressList != null && addressList.size() != 0) {
                             Log.d("TAG", addressList.toString());
-
                             Address address = addressList.get(0);
                             StringBuilder sb = new StringBuilder();
                             for (int i = 0; i < address.getMaxAddressLineIndex(); i++) {
-                                sb.append(address.getAddressLine(i)); //.append("\n");
+                                sb.append(address.getAddressLine(i));
                             }
                             sb.append(address.getLocality()).append(", ");
                             sb.append(address.getCountryName());
                             result = sb.toString();
                         }
                     } catch (IOException e) {
-                        Log.e("Location Address Loader", "Unable connect to Geocoder", e);
+                        Log.e("Location Address Loader", "Unable connect to Geocode", e);
                     }
 
                     dateTv.setText(dateMain);
@@ -461,41 +443,38 @@ public class PrayerActivity extends AppCompatActivity {
             radioFourteen.setChecked(true);
         }
 
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                if (checkedId == R.id.radioZero) {
-                    editor.putInt("key", 0);
-                } else if (checkedId == R.id.radioOne) {
-                    editor.putInt("key", 1);
-                }else if (checkedId == R.id.radioTwo) {
-                    editor.putInt("key", 2);
-                }else if (checkedId == R.id.radioThree) {
-                    editor.putInt("key", 3);
-                }else if (checkedId == R.id.radioFour) {
-                    editor.putInt("key", 4);
-                }else if (checkedId == R.id.radioFive) {
-                    editor.putInt("key", 5);
-                }else if (checkedId == R.id.radioSeven) {
-                    editor.putInt("key", 7);
-                }else if (checkedId == R.id.radioEight) {
-                    editor.putInt("key", 8);
-                }else if (checkedId == R.id.radioNine) {
-                    editor.putInt("key", 9);
-                }else if (checkedId == R.id.radioTen) {
-                    editor.putInt("key", 10);
-                }else if (checkedId == R.id.radioEleven) {
-                    editor.putInt("key", 11);
-                }else if (checkedId == R.id.radioTwelve) {
-                    editor.putInt("key", 12);
-                }else if (checkedId == R.id.radioThirteen) {
-                    editor.putInt("key", 13);
-                }else if (checkedId == R.id.radioFourteen) {
-                    editor.putInt("key", 14);
-                }
-                editor.apply();
+        radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            if (checkedId == R.id.radioZero) {
+                editor.putInt("key", 0);
+            } else if (checkedId == R.id.radioOne) {
+                editor.putInt("key", 1);
+            }else if (checkedId == R.id.radioTwo) {
+                editor.putInt("key", 2);
+            }else if (checkedId == R.id.radioThree) {
+                editor.putInt("key", 3);
+            }else if (checkedId == R.id.radioFour) {
+                editor.putInt("key", 4);
+            }else if (checkedId == R.id.radioFive) {
+                editor.putInt("key", 5);
+            }else if (checkedId == R.id.radioSeven) {
+                editor.putInt("key", 7);
+            }else if (checkedId == R.id.radioEight) {
+                editor.putInt("key", 8);
+            }else if (checkedId == R.id.radioNine) {
+                editor.putInt("key", 9);
+            }else if (checkedId == R.id.radioTen) {
+                editor.putInt("key", 10);
+            }else if (checkedId == R.id.radioEleven) {
+                editor.putInt("key", 11);
+            }else if (checkedId == R.id.radioTwelve) {
+                editor.putInt("key", 12);
+            }else if (checkedId == R.id.radioThirteen) {
+                editor.putInt("key", 13);
+            }else if (checkedId == R.id.radioFourteen) {
+                editor.putInt("key", 14);
             }
+            editor.apply();
         });
 
         sharedPreferences1=getSharedPreferences("SCHOOL", Context.MODE_PRIVATE);
@@ -507,25 +486,17 @@ public class PrayerActivity extends AppCompatActivity {
             radio1.setChecked(true);
         }
 
-        radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                SharedPreferences.Editor editor1 = sharedPreferences1.edit();
-                if (checkedId == R.id.radio0) {
-                    editor1.putInt("keyS", 0);
-                } else if (checkedId == R.id.radio1) {
-                    editor1.putInt("keyS", 1);
-                }
-                editor1.apply();
+        radioGroup1.setOnCheckedChangeListener((group, checkedId) -> {
+            SharedPreferences.Editor editor1 = sharedPreferences1.edit();
+            if (checkedId == R.id.radio0) {
+                editor1.putInt("keyS", 0);
+            } else if (checkedId == R.id.radio1) {
+                editor1.putInt("keyS", 1);
             }
+            editor1.apply();
         });
 
-        btnOK.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
+        btnOK.setOnClickListener(v -> dialog.dismiss());
 
         dialog.show();
     }

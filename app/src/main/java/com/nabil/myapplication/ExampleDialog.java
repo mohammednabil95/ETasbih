@@ -3,9 +3,10 @@ package com.nabil.myapplication;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDialogFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -14,6 +15,7 @@ public class ExampleDialog extends AppCompatDialogFragment {
     private EditText editNum;
     private ExampleDialogListener listener;
 
+    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -21,24 +23,17 @@ public class ExampleDialog extends AppCompatDialogFragment {
         View view = inflater.inflate(R.layout.layout_dialog, null);
         builder.setView(view)
                 .setTitle("Edit")
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
+                .setNegativeButton("Cancel", (dialog, which) -> {
 
-                    }
                 })
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String editNumber = editNum.getText().toString();
-                        if (editNumber.equals("")) {
-
-                        } else {
-                            MainActivity mainActivity = (MainActivity) getActivity();
-                            int value = Integer.valueOf(editNumber);
-                            mainActivity.counter = value;
-                            listener.applyNum(editNumber);
-                        }
+                .setPositiveButton("OK", (dialog, which) -> {
+                    String editNumber = editNum.getText().toString();
+                    if (editNumber.equals("")) {
+                        Log.d("TAG","null");
+                    } else {
+                        MainActivity mainActivity = (MainActivity) getActivity();
+                        mainActivity.counter = Integer.parseInt(editNumber);
+                        listener.applyNum(editNumber);
                     }
                 });
 
@@ -47,7 +42,7 @@ public class ExampleDialog extends AppCompatDialogFragment {
     }
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         try {
             listener = (ExampleDialogListener) context;
